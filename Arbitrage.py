@@ -64,4 +64,11 @@ def find_best_path(token, balance):
 
 if __name__ == "__main__":
     balance, path = find_best_path("tokenB", 5)
-    print(f"path: {path}, balance: {balance:.6f}.")
+
+    # example output: path: tokenB->tokenA->tokenD->tokenB, tokenB balance=10.930035.
+    print("path: ", end="")
+    for i, token in enumerate(path):
+        if i != 0:
+            print("->", end="")
+        print(f"{token}", end="")
+    print(f", balance: {balance:.6f}.")
