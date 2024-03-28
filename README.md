@@ -63,6 +63,8 @@ liquidity = Math.min(amount0.mul(_totalSupply) / _reserve0, amount1.mul(_totalSu
 What is a sandwich attack, and how might it impact you when initiating a swap?
 
 #### Sandwich Attack
-- 觀察市場，在有人送出交易但尚未執行時，先進行交易 (透過 gas 取得優先權) 抬高 token 價格，但不超過原交易者限制的 slippage tolerance。
-- 等待原交易進行。
-- 出售買入的 token ，因原交易會拉高價格，因此有利可圖。
+1. 觀察市場，在有人送出交易但尚未執行時，先進行交易 (透過 gas 取得優先權) 抬高 token 價格，但不超過原交易者限制的 slippage tolerance。
+2. 等待原交易進行。
+3. 出售買入的 token ，因原交易會拉高價格，因此有利可圖。
+
+此攻擊會增加交易者受到 slippage 的影響，拉高成本，而後續攻擊者拋售 token ，也會降低財產價值。
